@@ -37,7 +37,6 @@ const [active, setActive] = useState(false)
 
   return (
     <Card className={`${classes.root} ${active && classes.active}`} onClick={() => {setActive(true)}} onDoubleClick={() => {setActive(false)}}>
-      {/* <img src={<CheckCircleOutlineIcon />} className={`${classes.display} ${active && classes.block}`}/> */}
       <CardActionArea>
         <CardMedia
           component="img"
@@ -48,19 +47,19 @@ const [active, setActive] = useState(false)
         />
         <CardContent>
           <Typography gutterBottom variant="h5" className="text-center" component="h2">
-            Lizard
+            Burger
           </Typography>
           <Typography gutterBottom variant="p" className="text-center text-xs text-blue-900" component="p">
             $23
-          </Typography>
+           </Typography>
           </CardContent>
       </CardActionArea>
      {active && 
       <div style={
-        {"width":"100%","border":"2px solid","height":"100%","position":"absolute","top":"0","bottom":"0","right":"0","left":"0","display":"flex","justifyContent":"center","background":"black","opacity":"0.7"}
+        {"width":"100%","border":"2px solid","height":"100%","position":"absolute","top":"0","bottom":"0","right":"0","left":"0","display":"flex","justifyContent":"center","background":"black","opacity":"0.75"}
       }>
       <CheckCircleOutlineIcon style={
-          {"color":"white","fontSize":"60px","margin":"auto"}
+          {"color":"white","fontSize":"90px","margin":"auto"}
       } />
       </div>
      }

@@ -113,12 +113,12 @@ function CheckoutCards({Withpurchase}) {
           </Box>
 
           <Box display="block" className={classes.typoBox}>
-            <Typography className={classes.Typo1}>
-              Product Code : <span>0012345</span>
-            </Typography>
 
-            <Typography className={classes.Typo2}>
-               Panera Bread
+          <Typography className={classes.Typo2}>
+               Burger
+            </Typography>
+            <Typography className={classes.Typo1}>
+               $50
             </Typography>
           </Box>
         </Box>
