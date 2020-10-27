@@ -8,8 +8,8 @@ const FileManagerAppConfig = {
 	},
 	routes: [
 		{
-			path: '/file-manager',
-			component: React.lazy(() => import('./FileManagerApp'))
+			path: '/MainUI',
+			component: React.lazy(() => import('./full-width-2-tabbed'))
 		}
 	]
 };

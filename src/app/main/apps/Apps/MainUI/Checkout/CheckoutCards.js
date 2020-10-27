@@ -12,7 +12,7 @@ import Trash from '@material-ui/icons/Delete';
 // import Shoes from "../../assets/imgs/waise.jpeg";
 // import WithPurchase from "../PurchaseHistory/WithPurchase";
 
-import Incdec from "./incrementdecrement";
+
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function CheckoutCards({Withpurchase}) {
+function CheckoutCards(props ,{Withpurchase}) {
   const classes = useStyles();
   
   console.log({Withpurchase})
@@ -108,24 +108,24 @@ function CheckoutCards({Withpurchase}) {
         <Box display="flex" alignItems="flex-start">
           <Box>
             <img className={classes.locationImg}
-             src={safeWay}
+             src={props.image}
               />
           </Box>
 
           <Box display="block" className={classes.typoBox}>
 
           <Typography className={classes.Typo2}>
-               Burger
+               {props.name}
             </Typography>
             <Typography className={classes.Typo1}>
-               $50
+               ${props.price}
             </Typography>
           </Box>
         </Box>
         <Box display="block" className={classes.lastBox}>
           {Withpurchase ? (<div></div>) : ( 
           <Paper className={classes.cardActionsPaper}>
-            <Incdec />
+            {props.checkout}
           </Paper>)}
          
           <Box
@@ -135,7 +135,7 @@ function CheckoutCards({Withpurchase}) {
 
             }}
           >
-            <span className={classes.lastSpan}>$50.00</span>
+            <span className={classes.lastSpan}>${props.totalprice}</span>
 
             {Withpurchase ? (<div></div>) : (<Icon>delete</Icon>)}
             

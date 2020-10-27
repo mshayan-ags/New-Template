@@ -4,7 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import React, { useState } from 'react';
-import Sidebar from "./Checkout/Checkout"
+import Sidebar from "./Checkout/Checkout";
+import image from "./image.jpg"
+
 const useStyles = makeStyles({
 	layoutRoot: {}
 });
@@ -46,25 +48,25 @@ function CardedFullWidth2TabbedSample() {
 						{selectedTab === 0 && (
 							<div>
 								<h3 className="mb-16">All</h3>
-								<Card />
+								<Card image={image} name="Burger" price="25"/>
 							</div>
 						)}
 						{selectedTab === 1 && (
 							<div>
 								<h3 className="mb-16">Desserts</h3>
-								<Card />
+								<Card image={image} name="Burger" price="25"/>
 							</div>
 						)}
 						{selectedTab === 2 && (
 							<div>
 								<h3 className="mb-16">Drinks</h3>
-								<Card />
+								<Card image={image} name="Burger" price="25"/>
 							</div>
 						)}
 						{selectedTab === 3 && (
 							<div>
 								<h3 className="mb-16">Main Course</h3>
-								<Card />
+								<Card image={image} name="Burger" price="25"/>
 							</div>
 						)}
 					</div>
@@ -75,7 +77,7 @@ function CardedFullWidth2TabbedSample() {
 			<div className="widget flex w-full  sm:w-1/1 md:w-1/3 p-12">
 			<FusePageCarded 
 			content={
-				<Sidebar />
+				<Sidebar image={image} name="Burger" price="25" totalprice/>
 			}
 			
 			/>

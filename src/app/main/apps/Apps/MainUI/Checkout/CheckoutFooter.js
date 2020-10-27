@@ -1,6 +1,7 @@
 import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import {Link} from 'react-router-dom'
+import MyPurchasesModal from "../MyPurchaseModel";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px",
     height: "45px",
     marginTop: "10px",
+    margin:"10px"
   },
 
   typo1:{
@@ -49,8 +51,17 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CheckoutFooter = () => {
+const CheckoutFooter = (props) => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+ 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className={classes.main}>
       <Box className={classes.all}>
@@ -59,27 +70,32 @@ const CheckoutFooter = () => {
       </Box>
       <Box className={classes.all}>
         <Typography className = {classes.typo1}>Subtotal</Typography>
-        <Typography className = {classes.typo2}>$150.00</Typography>
+        <Typography className = {classes.typo2}>${props.totalprice}</Typography>
       </Box>
       <Box className={classes.all}>
         <Typography className = {classes.typo1}>Total</Typography>
-        <Typography className = {classes.typo3}>$156.99</Typography>
+        <Typography className = {classes.typo3}>${props.totalprice}</Typography>
       </Box>
       <Box className={classes.all}>
-      <Link style ={{
-          textDecoration : 'none'
-      }} to = "/">
+     
       <Button className={classes.button} variant="outlined">
         Cancel
       </Button>
-      </Link> 
-       <Link style ={{
-          textDecoration : 'none'
-      }} to = "/">
-      <Button className={classes.button} variant="outlined">
-        Print
+     
+    
+      <Button
+        onClick={handleOpen}
+        className={classes.button}
+        variant="outlined"
+      >
+        Pay
       </Button>
-      </Link>
+
+      <MyPurchasesModal
+        open={open}
+        handleOpen={handleOpen}
+        handleClose={handleClose}
+      />
       </Box>
     </div>
   );

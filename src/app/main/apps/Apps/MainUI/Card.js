@@ -31,9 +31,9 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(props) {
   const classes = useStyles();
-const [active, setActive] = useState(false)
+const [active, setActive] = useState(true)
 
   return (
     <Card className={`${classes.root} ${active && classes.active}`} onClick={() => {setActive(true)}} onDoubleClick={() => {setActive(false)}}>
@@ -42,15 +42,15 @@ const [active, setActive] = useState(false)
           component="img"
           alt="Contemplative Reptile"
           height="540"
-          image={safeWay}
+          image={props.image}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" className="text-center" component="h2">
-            Burger
+            {props.name}
           </Typography>
           <Typography gutterBottom variant="p" className="text-center text-xs text-blue-900" component="p">
-            $23
+            ${props.price}
            </Typography>
           </CardContent>
       </CardActionArea>

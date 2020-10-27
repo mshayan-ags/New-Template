@@ -12,7 +12,8 @@ import ScrumboardAppConfig from './scrumboard/ScrumboardAppConfig';
 import TodoAppConfig from './todo/TodoAppConfig';
 import Dashboard from "./Apps/dashboards/project/ProjectDashboardAppConfig"
 import Admin from "./Apps/e-commerce/ECommerceAppConfig"
-import MainUI from "./Apps/file-manager/FileManagerAppConfig"
+import MainUI from "./Apps/MainUI/FileManagerAppConfig"
+import FileManager from "./Apps/file-manager/FileManagerAppConfig"
 
 const appsConfigs = [
 	// AnalyticsDashboardAppConfig,
@@ -29,7 +30,8 @@ const appsConfigs = [
 	// NotesAppConfig
 	Dashboard,
 	Admin,
-	MainUI
+	MainUI,
+	FileManager
 ];
 
 export default appsConfigs;
