@@ -21,6 +21,15 @@ function Checkout(props) {
  <span style={{padding:8,fontSize:12}} onClick={() => setCount(count + 1)}>+</span>
  </div>
  const total = props.price * count
+ if (count === 0) {
+  return (
+    <div>
+    
+      <CheckoutFooter totalprice={total}/>
+        
+    </div>
+  );
+ } else {
   return (
     <div>
          <CheckoutCards image={props.image} name={props.name} price={props.price} totalprice={total} checkout={Btn}/>
@@ -29,6 +38,8 @@ function Checkout(props) {
         
     </div>
   );
+ }
+ 
 }
 
 export default Checkout;

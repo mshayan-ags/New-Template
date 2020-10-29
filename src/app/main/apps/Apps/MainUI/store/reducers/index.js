@@ -1,14 +1,10 @@
 import { combineReducers } from 'redux';
-import order from './order.reducer';
-import orders from './orders.reducer';
-import product from './product.reducer';
-import products from './products.reducer';
+import files from './files.reducer';
+import selectedItemId from './selectedItemIdReducer';
 
 const reducer = combineReducers({
-	products,
-	product,
-	orders,
-	order
+	files,
+	selectedItemId
 });
 
 export default reducer;

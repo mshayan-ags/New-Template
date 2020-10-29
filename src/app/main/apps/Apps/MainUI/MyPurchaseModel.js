@@ -7,6 +7,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import { Box, Divider, List, ListItem, Typography } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "react-router-dom";
+import Invoice from "./CompactInvoicePage";
 
 const useStyles = makeStyles((theme) => ({
   box:{
@@ -59,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainBox: {
     position: "relative",
-    width: "600px",
+    width: "1000px",
     margin: "40px auto",
 
   },
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: "85%",
+    width: "100%",
     margin: "auto",
     borderRadius: "11%",
 
@@ -79,7 +80,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#f3f3f3",
     height: "auto,",
     overflow: "hidden",
-    padding: "20px",
     background: "#fff",
     // boxShadow: "0 3px 5px rgba(0, 0, 0, 0.05)",
     // "-webkit-clip-path":
@@ -130,109 +130,14 @@ export default function MyPurchasesModal({ handleClose, handleOpen, open }) {
         }}
       >
         <Fade in={open}>
+           
           <div className={classes.mainBox}>
+        <Invoice />
+{/*            
             <div className={classes.paper}>
               <div className={classes.headerBox}>
-             
-                <Box className = {classes.dot}
-                >
-                  <span>Recipt</span>
-               
-                </Box>
-
-              
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  width: "94%",
-                  justifyContent: "space-between",
-                }}
-              >
-                <p>
-                  Date:- <span>21-10-2020</span>
-                </p>
-                <p>
-                  Invoice ID:- <span>12345</span>
-                </p>
-              </div>
-
-              <Divider className={classes.divider} />
-
-              <div
-                style={{
-                  display: "flex",
-                  width: "100%",
-                  justifyContent: "space-between",
-                  margin: "20px 0px 34px 0px",
-                }}
-              >
-                <div>
-                  <p>
-                  Make My Trip <br />
-                    Domestic Flight<br />
-                    Make My Trip <br />
-                    Domestic Flight
-                  </p>
-                </div>
-
-                <p>
-                  AED<span>800</span>
-                </p>
-              </div>
-
-              <Divider className={classes.divider} />
-
-              <div
-                style={{
-                  display: "flex",
-                  width: "100%",
-                  flexDirection: "column",
-                  margin: "20px 0px",
-                }}
-              >
-                <Box className={classes.listItem}>
-                  <div>Total :</div>
-                  <div>AED 325.30</div>
-                </Box>
-                <Box className={classes.listItem}>
-                  <div>Delivery Charge</div>
-                  <div>AED 0</div>
-                </Box>
-                <Box className={classes.listItem}>
-                  <div>Discount</div>
-                  <div>AED 0</div>
-                </Box>
-                <Box className={classes.listItem}>
-                  <div>VAT 5%</div>
-                  <div>AED 5</div>
-                </Box>
-                {/* <List>
-                  <ListItem>Total :</ListItem>
-                  <ListItem>Delivery Charge :</ListItem>
-                  <ListItem>Discount :</ListItem>
-                  <ListItem>VAT 5% :</ListItem>
-                </List>
-                <List>
-                  <ListItem>
-                    AED <span>800</span>
-                  </ListItem>
-                  <ListItem>
-                    AED <span>800</span>
-                  </ListItem>
-                  <ListItem>
-                    AED <span>800</span>
-                  </ListItem>
-                  <ListItem>
-                    AED <span>800</span>
-                  </ListItem>
-                </List> */}
-              </div>
-
-              <Box className={classes.box}>
-              <div className={classes.root}>{"To Checkout From Store Need to Verify "}<span className={classes.blue}> QR CODE </span>{" First"}</div>
-              </Box>
-            </div>
+                          </div> */}
           </div>
         </Fade>
       </Modal>
